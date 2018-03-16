@@ -118,5 +118,22 @@
 	<!--构建项目 -->
 	<build>
 		<finalName>sso-server</finalName>
+		<plugins>
+			<!-- tomcat7 启动所需jar包 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.2</version>
+				<configuration>
+					<!--端口 -->
+					<port>8800</port>
+					<!--注意名称 -->
+					<path>/sso-server</path>
+					<uriEncoding>UTF-8</uriEncoding>
+					<!--注意此名字 启动时会用到 -->
+					<server>tomcat7</server>
+				</configuration>
+			</plugin>
+		</plugins>
 	</build>
 </project>
