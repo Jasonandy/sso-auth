@@ -15,8 +15,9 @@
 * describe：值班记录
 
 # 简述:
-> SSO Oauth2.0
+> 单点登录
 - SSO Oauth2.0
+- [参考地址](https://www.cnblogs.com/ywlaker/p/6113927.html)
 
 
 ###

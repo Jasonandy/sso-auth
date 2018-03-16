@@ -1,1 +1,7 @@
-/.settings
+# ignore file By Jason
+/.settings/
+/target/
+/.classpath
+/.project
+/sso-client.iml
+#########End#############

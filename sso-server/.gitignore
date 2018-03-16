@@ -1,1 +1,8 @@
+# ignore file By Jason
 /.settings
+/.classpath
+/.project
+/.tern-project
+/sso-server.iml
+/target/
+#########End#############

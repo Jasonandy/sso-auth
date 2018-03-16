@@ -1,5 +1,8 @@
-/.settings
-*.classpath
-*.project
+#ignore File By Jason#
+/.settings/
+/.idea/
 /.classpath
-/*.project
+/.project
+/sso-auth.iml
+/target/
+##########End############
