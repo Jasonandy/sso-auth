@@ -26,14 +26,28 @@
   <!-- Jar 依赖 -->
   <dependencies>
   		
-  		<!-- sso-client 引入  -->
-		<dependency>
-			<groupId>cn.ucaner.sso</groupId>
-			<artifactId>sso-client</artifactId>
-			<version>${parent.version}</version>
-		</dependency>
-		
-		<!--slf4j-api  -->
+	<!-- sso-client 引入  -->
+	<dependency>
+		<groupId>cn.ucaner.sso</groupId>
+		<artifactId>sso-client</artifactId>
+		<version>${parent.version}</version>
+	</dependency>
+
+	  <!-- druid -->
+	  <dependency>
+		  <groupId>com.alibaba</groupId>
+		  <artifactId>druid</artifactId>
+		  <version>1.1.8</version>
+	  </dependency>
+
+	  <!-- pagehelper -->
+	  <dependency>
+		  <groupId>com.github.pagehelper</groupId>
+		  <artifactId>pagehelper</artifactId>
+		  <version>5.1.2</version>
+	  </dependency>
+
+	  <!--slf4j-api  -->
 		<dependency> 
 	      <groupId>org.slf4j</groupId>  
 	      <artifactId>slf4j-api</artifactId>  
