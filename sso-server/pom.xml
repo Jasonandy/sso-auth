@@ -15,6 +15,13 @@
   <packaging>war</packaging>
   <name>sso-server</name>
   <url>http://sso-server.ucaner.cn</url>
+
+	<!-- 属性配置-->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
+		<maven.build.timestamp.format>yyyy-MM-dd-HH_mm_ss</maven.build.timestamp.format>
+	</properties>
   
   <!-- Jar 依赖 -->
   <dependencies>
@@ -119,6 +126,38 @@
 	<build>
 		<finalName>sso-server</finalName>
 		<plugins>
+			<!--Maven 编译插件-->
+			<plugin>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+
+			<!--maven 打包插件-->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<!-- war包名字-->
+					<warName>${project.artifactId}</warName>
+					<warSourceDirectory>WebRoot</warSourceDirectory>
+					<!-- webxml位置 -->
+					<webXml>WebRoot\WEB-INF\web.xml</webXml>
+					<webResources>
+						<resource>
+							<directory>src\</directory>
+							<includes>
+								<include>*.*</include>
+								<include>**/*.*</include>
+							</includes>
+							<filtering>true</filtering>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
+
 			<!-- tomcat7 启动所需jar包 -->
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
@@ -129,11 +168,19 @@
 					<port>8800</port>
 					<!--注意名称 -->
 					<path>/sso-server</path>
-					<uriEncoding>UTF-8</uriEncoding>
+					<uriEncoding>${project.build.sourceEncoding}</uriEncoding>
 					<!--注意此名字 启动时会用到 -->
 					<server>tomcat7</server>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+
+	<!--阿里云仓库引入-->
+	<repositories>
+		<repository>
+			<id>aliyun repository</id>
+			<url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
 </project>
