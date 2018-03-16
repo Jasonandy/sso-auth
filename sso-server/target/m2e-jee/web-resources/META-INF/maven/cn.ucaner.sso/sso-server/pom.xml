@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  
+  <!-- 父级依赖 -->
+  <parent>
+    <groupId>cn.ucaner.sso</groupId>
+    <artifactId>sso-auth</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  
+  <!-- 模块信息 -->
+  <artifactId>sso-server</artifactId>
+  <packaging>war</packaging>
+  <name>sso-server</name>
+  <url>http://sso-server.ucaner.cn</url>
+  
+  <!-- Jar 依赖 -->
+  <dependencies>
+  		
+  		<!-- sso-client 引入  -->
+		<dependency>
+			<groupId>cn.ucaner.sso</groupId>
+			<artifactId>sso-client</artifactId>
+			<version>${parent.version}</version>
+		</dependency>
+		
+		<!--slf4j-api  -->
+		<dependency> 
+	      <groupId>org.slf4j</groupId>  
+	      <artifactId>slf4j-api</artifactId>  
+	   </dependency>
+	   
+	   <!--  logback-classic -->
+	   <dependency>
+		    <groupId>ch.qos.logback</groupId>
+		    <artifactId>logback-classic</artifactId>
+		    <version>1.2.3</version>
+		</dependency>
+		
+	    <!-- jackson-databind --> 
+	    <dependency> 
+	      <groupId>com.fasterxml.jackson.core</groupId>  
+	      <artifactId>jackson-databind</artifactId>  
+	      <version>2.1.0</version> 
+	    </dependency>
+    
+	    <!-- jackson-annotations -->  
+	    <dependency> 
+	      <groupId>com.fasterxml.jackson.core</groupId>  
+	      <artifactId>jackson-annotations</artifactId>  
+	      <version>2.1.0</version> 
+	    </dependency>
+    	
+  
+  		<!-- mysql -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		
+		<!-- spring-jdbc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+		</dependency>
+		
+		<!-- tomcat-jdbc -->
+		<dependency>
+			<groupId>org.apache.tomcat</groupId>
+			<artifactId>tomcat-jdbc</artifactId>
+		</dependency>
+		
+		<!-- mybatis-spring -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis-spring</artifactId>
+		</dependency>
+
+		<!--  mybatis -->
+		<dependency>
+			<groupId>org.mybatis</groupId>
+			<artifactId>mybatis</artifactId>
+		</dependency>
+		
+		<!-- freemarker -->
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+		</dependency>
+	
+		<!-- webmvc -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+		</dependency>
+
+		<!-- spring-context-support -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		
+		<!--javax.servlet-api  -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+		</dependency>
+		
+		<!--  junit-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+	</dependencies>
+	
+	<!--构建项目 -->
+	<build>
+		<finalName>sso-server</finalName>
+	</build>
+</project>

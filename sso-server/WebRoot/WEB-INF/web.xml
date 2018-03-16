@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:jsp="http://java.sun.com/xml/ns/javaee/jsp"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	
+	<!-- Web项目基本信息 -->
+	<display-name>sso-server</display-name>
+	<description>sso-server Made by Jason Just for Study</description>
+	
+	<!--Logo-->
+	<icon>
+	   <small-icon>favicon.ico</small-icon>
+	   <large-icon>favicon.ico</large-icon>
+	</icon>
+	
+	<!-- 使用logback作为平台日志插件 -->
+	<context-param>
+		<param-name>logbackConfigLocation</param-name>
+		<param-value>classpath:/logback/logback.xml</param-value>
+	</context-param>
+	
+	<!--<listener>  -->
+		<!--<listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>-->
+	<!--</listener>-->
+	
+	<listener>  
+		<listener-class>cn.ucaner.common.framework.log.LogbackConfigListener</listener-class>
+	</listener>
+	
+	<!-- 指定Spring的配置文件 -->
+	<!-- 否则Spring会默认从WEB-INF下寻找配置文件,contextConfigLocation属性是Spring内部固定的 -->
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath*:/spring-framework*.xml</param-value>
+	</context-param>
+
+	<!-- 防止发生java.beans.Introspector内存泄露,应将它配置在ContextLoaderListener的前面 -->
+    <listener>
+		<listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
+	</listener>
+
+	<!-- 容器启动时监听日志文件数据的加载 log4j -->
+  	<listener>
+    	<listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+    </listener>
+    
+   	<!-- 实例化Spring容器 -->
+	<!-- 应用启动时,该监听器被执行,它会读取Spring相关配置文件,其默认会到WEB-INF中查找applicationContext.xml -->
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+
+	<!-- 解决乱码问题 -->
+	<!-- forceEncoding默认为false,此时效果可大致理解为request.setCharacterEncoding("UTF-8") -->
+	<!-- forceEncoding=true后,可大致理解为request.setCharacterEncoding("UTF-8")和response.setCharacterEncoding("UTF-8") -->
+	<filter>
+		<filter-name>encodingFilter</filter-name>
+		<filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+		<init-param>
+			<param-name>encoding</param-name>
+			<param-value>UTF-8</param-value>
+		</init-param>
+		<init-param>
+			<param-name>forceEncoding</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>encodingFilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+	<!-- SpringMVC核心分发器 -->
+	<servlet>
+		<servlet-name>spring-mvc</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<init-param>
+			<param-name>contextConfigLocation</param-name>
+			<param-value>classpath:/springmvc-framework.xml</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>spring-mvc</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<!--容器的session有效时间的配置 单位：分钟  -->
+	<session-config>  
+	   <session-timeout>20</session-timeout>  
+	</session-config> 
+
+	<error-page>
+		<exception-type>java.lang.Throwable</exception-type>
+		<location>/common/500.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/common/500.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>404</error-code>
+		<location>/common/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>403</error-code>
+		<location>/common/403.jsp</location>
+	</error-page>
+	<welcome-file-list>
+		<welcome-file>/</welcome-file>
+		<welcome-file>index.ftl</welcome-file>
+	</welcome-file-list>
+</web-app>
