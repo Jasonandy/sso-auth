@@ -32,7 +32,7 @@ import cn.ucaner.sso.client.util.HTTPUtil;
 * @Package：cn.ucaner.sso.client.filter   
 * @ClassName：LogoutFilter   
 * @Description：   <p> 客户端注销filter</p>
-* @Author： - DaoDou   
+* @Author： - Jason
 * @CreatTime：2018年3月16日 上午11:10:28   
 * @Modify By：   
 * @ModifyTime：  2018年3月16日

@@ -1,10 +1,10 @@
 /**
  * <html>
  * <body>
- *  <P> Copyright 2014 广东天泽阳光康众医疗投资管理有限公司. 粤ICP备09007530号-15</p>
+ *  <P> Copyright 1994-2018. JasonInternational.</p>
  *  <p> All rights reserved.</p>
- *  <p> Created on 2018年3月13日 下午3:51:44</p>
- *  <p> Created by DaoDou</p>
+ *  <p> Created on 2018年3月13日 下午3:45:46</p>
+ *  <p> Created by Jason</p>
  *  </body>
  * </html>
  */
@@ -28,7 +28,7 @@ import ch.qos.logback.core.joran.spi.JoranException;
  * @Package：cn.ucaner.common.framework.common.spring.ext.web   
  * @ClassName：WebLogbackConfigurer   
  * @Description：   <p> WebLogbackConfigurer</p>
- * @Author： - DaoDou   
+ * @Author： - Jason
  * @CreatTime：2018年3月13日 下午3:51:44   
  * @Modify By：   
  * @ModifyTime：  2018年3月13日

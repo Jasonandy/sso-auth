@@ -14,7 +14,7 @@ package cn.ucaner.sso.client.constant;
 * @Package：cn.ucaner.sso.client.constant   
 * @ClassName：AuthConst   
 * @Description：   <p> 授权过程中涉及到的常量字符串</p>
-* @Author： - DaoDou   
+* @Author： - Jason
 * @CreatTime：2018年3月16日 上午11:04:42   
 * @Modify By：   
 * @ModifyTime：  2018年3月16日

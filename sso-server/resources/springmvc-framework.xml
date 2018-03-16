@@ -99,17 +99,12 @@
     </bean>
 
 
-	
 	<!-- 容器默认的DefaultServletHandler处理 所有静态内容与无RequestMapping处理的URL -->
 	<mvc:default-servlet-handler/>
 
-    
 	<!-- 定义无需Controller的url<->view直接映射 -->
 	<mvc:view-controller path="/login" view-name="redirect:/login"/>
 
-	<!-- test 页面映射 -->
-	<mvc:resources mapping="/test/**" location="/WEB-INF/views/test/"/>
-	
 	<!-- <mvc:interceptors>
 	<mvc:interceptor>
 		<mvc:exclude-mapping path="/test/js/**"/>

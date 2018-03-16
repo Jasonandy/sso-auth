@@ -19,7 +19,7 @@ import javax.servlet.http.HttpSession;
 * @Package：cn.ucaner.sso.client.storage   
 * @ClassName：SessionStorage   
 * @Description：   <p> Seesion存储信息</p>
-* @Author： - DaoDou   
+* @Author： - Jason
 * @CreatTime：2018年3月16日 上午11:11:20   
 * @Modify By：   
 * @ModifyTime：  2018年3月16日

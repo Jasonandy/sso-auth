@@ -28,7 +28,7 @@ import ch.qos.logback.core.joran.spi.JoranException;
 * @Package：cn.ucaner.common.framework.common.spring.ext   
 * @ClassName：LogbackConfigurer   
 * @Description：   <p> LogbackConfigurer</p>
-* @Author： - DaoDou   
+* @Author： - Jason
 * @CreatTime：2018年3月13日 下午3:54:18   
 * @Modify By：   
 * @ModifyTime：  2018年3月13日

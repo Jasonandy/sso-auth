@@ -19,7 +19,7 @@ import java.util.Map;
 * @Package：cn.ucaner.sso.server.storage   
 * @ClassName：ClientStorage   
 * @Description：   <p> ClientStorage</p>
-* @Author： - DaoDou   
+* @Author： - Jason
 * @CreatTime：2018年3月16日 下午1:47:00   
 * @Modify By：   
 * @ModifyTime：  2018年3月16日

@@ -19,7 +19,7 @@ import cn.ucaner.common.framework.common.spring.ext.web.WebLogbackConfigurer;
  * @Package：cn.ucaner.common.framework.log   
  * @ClassName：LogbackConfigListener   
  * @Description：   <p> LogbackConfigListener</p>
- * @Author： - DaoDou   
+ * @Author： - Jason
  * @CreatTime：2018年3月13日 下午3:48:47   
  * @Modify By：   
  * @ModifyTime：  2018年3月13日

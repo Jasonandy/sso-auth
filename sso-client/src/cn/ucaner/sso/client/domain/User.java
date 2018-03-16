@@ -14,7 +14,7 @@ package cn.ucaner.sso.client.domain;
 * @Package：cn.ucaner.sso.client.domain   
 * @ClassName：User   
 * @Description：   <p> 用户基本信息</p>
-* @Author： - DaoDou   
+* @Author： - Jason
 * @CreatTime：2018年3月16日 上午11:10:49   
 * @Modify By：   
 * @ModifyTime：  2018年3月16日

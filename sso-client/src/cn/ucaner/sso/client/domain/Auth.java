@@ -16,7 +16,7 @@ import java.util.Date;
 * @Package：cn.ucaner.sso.client.domain   
 * @ClassName：Auth   
 * @Description：   <p> 授权信息</p>
-* @Author： - DaoDou   
+* @Author： - Jason
 * @CreatTime：2018年3月16日 上午11:11:04   
 * @Modify By：   
 * @ModifyTime：  2018年3月16日
