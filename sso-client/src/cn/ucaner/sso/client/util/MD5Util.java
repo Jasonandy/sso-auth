@@ -24,11 +24,12 @@ import org.apache.commons.codec.digest.DigestUtils;
 * @version    V1.0
  */
 public class MD5Util {
+	
 	/**
-	 * MD5加密字符串
-	 * 
+	 * @Description: MD5加密字符串
 	 * @param src
-	 * @return
+	 * @return String
+	 * @Autor: Jason - jasonandy@hotmail.com
 	 */
 	public static String encode(String src) {
 		return DigestUtils.md5Hex(src);

@@ -52,13 +52,11 @@ public class HTTPUtil {
 		// 参数处理
 		if (params != null && !params.isEmpty()) {
 			List<NameValuePair> list = new ArrayList<NameValuePair>();
-			
 			Iterator<Entry<String, String>> it = params.entrySet().iterator();
 			while (it.hasNext()) {
 				Entry<String, String> entry = it.next();
 				list.add(new BasicNameValuePair(entry.getKey(), entry.getValue()));
 			}
-			
 			httpPost.setEntity(new UrlEncodedFormEntity(list, Consts.UTF_8));
 		}
 		// 执行请求
@@ -71,10 +69,14 @@ public class HTTPUtil {
 		return true;
 	}
 	
-	// 测试
+	/**
+	 * @Description: sso.ucaner.cn
+	 * @param args void
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
 	public static void main(String[] args) {
 		Map<String, String> params = new HashMap<String, String>();
 		params.put("clientUrl", "httputil");
-		post("http://sso.cauner.com/", params);
+		post("http://sso.ucaner.cn/", params);
 	}
 }

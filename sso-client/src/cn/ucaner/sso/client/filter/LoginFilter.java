@@ -38,32 +38,39 @@ import cn.ucaner.sso.client.storage.SessionStorage;
  */
 public class LoginFilter implements Filter {
 	
-	
+	/**
+	 * FilterConfig
+	 */
 	private FilterConfig config;
 
+	/**
+	 * 销毁方法
+	 */
 	public void destroy() {}
 
+	/**
+	 * 作处理
+	 */
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		HttpSession session = request.getSession();
 		
-		// 已经登录，放行
+		// 已经登录
 		if (session.getAttribute(AuthConst.IS_LOGIN) != null) {
 			chain.doFilter(req, res);
 			return;
 		}
-		// 从认证中心回跳的带有token的请求，有效则放行
+		// 从认证中心回跳的带有token的请求
 		String token = request.getParameter(AuthConst.TOKEN);
 		if (token != null) {
 			session.setAttribute(AuthConst.IS_LOGIN, true);
 			session.setAttribute(AuthConst.TOKEN, token);
-			// 存储，用于注销
+			// 存储 用于注销
 			SessionStorage.INSTANCE.set(token, session);
 			chain.doFilter(req, res);
 			return;
 		}
-
 		// 重定向至登录页面，并附带当前请求地址
 		response.sendRedirect(config.getInitParameter(AuthConst.LOGIN_URL) + "?" + AuthConst.CLIENT_URL + "=" + request.getRequestURL());
 	}

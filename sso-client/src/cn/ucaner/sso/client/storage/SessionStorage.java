@@ -27,13 +27,25 @@ import javax.servlet.http.HttpSession;
 * @version    V1.0
  */
 public enum SessionStorage {
+	
 	INSTANCE;
+	
+	
+	/**
+	 * HashMap 存储HttpSession数据
+	 */
 	private Map<String, HttpSession> map = new HashMap<String, HttpSession>();
 	
 	public void set(String token, HttpSession session) {
 		map.put(token, session);
 	}
 	
+	/**
+	 * @Description: 根据 token 获取对应seesion数据
+	 * @param token
+	 * @return HttpSession
+	 * @Autor: Jason - jasonandy@hotmail.com
+	 */
 	public HttpSession get(String token) {
 		if (map.containsKey(token)) {
 			return map.remove(token);

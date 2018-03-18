@@ -10,12 +10,9 @@
  */
 package cn.ucaner.sso.server.service.impl;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import cn.ucaner.sso.client.domain.User;
-import cn.ucaner.sso.server.dao.UserDao;
 import cn.ucaner.sso.server.service.UserService;
 
 /**
@@ -32,9 +29,11 @@ import cn.ucaner.sso.server.service.UserService;
 @Service("userService")
 public class UserServiceImpl implements UserService {
 
+	/**
+	 * 查找
+	 */
 	@Override
 	public User find(User user) {
-		// TODO Auto-generated method stub
 		return null;
 	}
 	

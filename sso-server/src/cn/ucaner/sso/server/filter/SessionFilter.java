@@ -39,20 +39,23 @@ import cn.ucaner.sso.server.storage.ClientStorage;
 public class SessionFilter implements Filter{
 	
 	
+	@Override
 	public void destroy() {}
 
+	/**
+	 * 作出具体的业务操作
+	 */
+	@Override
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
 		HttpSession session = request.getSession();
 		String uri = request.getRequestURI();
-		
-		// 注销请求，放行
+		// 注销操作
 		if ("/logout".equals(uri)) {
 			chain.doFilter(req, res);
 			return;
 		}
-		
 		// 已经登录，放行
 		if (session.getAttribute(AuthConst.IS_LOGIN) != null) {
 			// 如果是客户端发起的登录请求，跳转回客户端，并附带token
@@ -71,6 +74,7 @@ public class SessionFilter implements Filter{
 			chain.doFilter(req, res);
 			return;
 		}
+		
 		// 登录请求，放行
 		if ("/".equals(uri) || "/login".equals(uri)) {
 			chain.doFilter(req, res);
@@ -81,5 +85,6 @@ public class SessionFilter implements Filter{
 		response.sendRedirect("/");
 	}
 
+	@Override
 	public void init(FilterConfig config) throws ServletException {}
 }
