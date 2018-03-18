@@ -43,6 +43,8 @@ import cn.ucaner.sso.server.storage.ClientStorage;
  */
 @Controller
 public class LoginController {
+	
+	
 	@Autowired
 	private UserService userService;
 	

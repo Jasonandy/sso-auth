@@ -31,23 +31,11 @@ import cn.ucaner.sso.server.service.UserService;
  */
 @Service("userService")
 public class UserServiceImpl implements UserService {
-	
-	@Autowired
-	private UserDao userDao;
-	
-	@Value("${db.table}")
-	private String table;
-	
-	@Value("${db.table.userid}")
-	private String userid;
-	
-	@Value("${db.table.username}")
-	private String username;
-	
-	@Value("${db.table.password}")
-	private String password;
 
+	@Override
 	public User find(User user) {
-		return userDao.find(user, table, userid, username, password);
+		// TODO Auto-generated method stub
+		return null;
 	}
+	
 }

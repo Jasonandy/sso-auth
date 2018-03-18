@@ -10,10 +10,6 @@
  */
 package cn.ucaner.sso.server.dao;
 
-import org.apache.ibatis.annotations.Param;
-
-import cn.ucaner.sso.client.domain.User;
-
 /**
 * @Package：cn.ucaner.sso.server.dao   
 * @ClassName：UserDao   
@@ -28,6 +24,4 @@ import cn.ucaner.sso.client.domain.User;
 public interface UserDao {
 	
 	
-	public User find(@Param("user") User user, @Param("table") String table, @Param("userid") String userid,
-			@Param("username") String username, @Param("password") String password);
 }
