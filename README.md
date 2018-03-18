@@ -12,7 +12,7 @@
 # sso-auth
 * Project：sso-auth
 * OfficialWebsite：http://sso-auth.ucaner.cn
-* describe：值班记录
+* describe：授权相关技术点学习整理
 
 # 简述:
 > 单点登录
@@ -45,8 +45,10 @@
 - Nike-Name：Jason
 - E-Mail: jasonandy@hotmail.com
 
+
 ## License
-开源协议 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html)
+<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/3.0/cn/88x31.png" /></a>
+本作品采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/">知识共享署名-非商业性使用-相同方式共享 3.0 中国大陆许可协议</a> 进行许可。
 
 #
 <p align=center>
