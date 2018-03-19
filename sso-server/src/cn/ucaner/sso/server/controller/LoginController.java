@@ -20,8 +20,8 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.ModelAndView;
 
 import cn.ucaner.sso.client.constant.AuthConst;
 import cn.ucaner.sso.client.domain.User;
@@ -57,12 +57,19 @@ public class LoginController {
 	 * @Autor: Jason - jasonandy@hotmail.com
 	 */
 	@RequestMapping("/login")
-	public String login(HttpServletRequest request, User input, Model model) {
-		// 验证用户
-		User user = userService.find(input);
-		if (user == null) {
-			model.addAttribute("error", "username or password is wrong.");
-			return "redirect:/";
+	public ModelAndView login(HttpServletRequest request, User input) {
+		String loginErro = "loginErro";
+		ModelAndView view = null;
+		/**
+		 * 根据用户的账号密码查找用户 (MD5密码 )
+		 */
+        // 验证用户
+		//User user = userService.find(input);
+		User user = new User("001","jason","123456");
+		if (!user.getUsername().equals(input.getUsername())) {
+			view = new ModelAndView(loginErro);
+			view.addObject("erroInfo", "大兄弟，对捂住！请核实好账号密码再来登哦！");
+			return view;
 		}
 
 		// 授权
@@ -76,14 +83,12 @@ public class LoginController {
 		// 子系统跳转过来的登录请求，授权、存储后，跳转回去
 		String clientUrl = request.getParameter(AuthConst.CLIENT_URL);
 		if (clientUrl != null && !"".equals(clientUrl)) {
+			view = new ModelAndView("redirect:" + clientUrl + "?" + AuthConst.TOKEN + "=" + token);
 			// 存储，用于注销
 			ClientStorage.INSTANCE.set(token, clientUrl);
-			return "redirect:" + clientUrl + "?" + AuthConst.TOKEN + "=" + token;
 		}
-
-		return "redirect:/";
+		return view;
 	}
-
 	
 	/**
 	 * @Description: 注销
@@ -116,7 +121,6 @@ public class LoginController {
 				HTTPUtil.post(url, params);
 			}
 		}
-		
 		return "redirect:/";
 	}
 }

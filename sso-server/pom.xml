@@ -54,24 +54,6 @@
 	    <version>1.3.1</version>
 	</dependency>
 	
-	<!-- jackson -->
-	<dependency>    
-	    <groupId>com.fasterxml.jackson.core</groupId>    
-	    <artifactId>jackson-core</artifactId>    
-	    <version>2.7.4</version>  
-	</dependency>    
-	<dependency>    
-	    <groupId>com.fasterxml.jackson.core</groupId>    
-	    <artifactId>jackson-databind</artifactId>    
-	    <version>2.7.4</version>    
-	</dependency>    
-	<dependency>    
-	    <groupId>com.fasterxml.jackson.core</groupId>    
-	    <artifactId>jackson-annotations</artifactId>    
-	    <version>2.7.4</version>  
-	</dependency>   
-	<!--  jackson end -->
-	
 	<dependency>
 		<groupId>aspectj</groupId>
 		<artifactId>aspectjweaver</artifactId>
@@ -109,15 +91,23 @@
 	    <dependency> 
 	      <groupId>com.fasterxml.jackson.core</groupId>  
 	      <artifactId>jackson-databind</artifactId>  
-	      <version>2.1.0</version> 
+	      <version>2.7.4</version> 
 	    </dependency>
     
 	    <!-- jackson-annotations -->  
 	    <dependency> 
 	      <groupId>com.fasterxml.jackson.core</groupId>  
 	      <artifactId>jackson-annotations</artifactId>  
-	      <version>2.1.0</version> 
+	      <version>2.7.4</version> 
 	    </dependency>
+	    
+	    <!-- jackson -->
+		<dependency>    
+		    <groupId>com.fasterxml.jackson.core</groupId>    
+		    <artifactId>jackson-core</artifactId>    
+		    <version>2.7.4</version>  
+		</dependency>    
+		<!--  jackson end -->
     	
   
   		<!-- mysql -->
