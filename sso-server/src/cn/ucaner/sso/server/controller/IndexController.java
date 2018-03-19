@@ -12,6 +12,8 @@ package cn.ucaner.sso.server.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,6 +34,8 @@ import cn.ucaner.sso.client.constant.AuthConst;
 @Controller
 public class IndexController {
 	
+	public Logger logger = LoggerFactory.getLogger(IndexController.class);
+	
 	/**
 	 * @Description: 登录页面
 	 * @param request
@@ -39,9 +43,11 @@ public class IndexController {
 	 * @return String
 	 * @Autor: Jason - jasonandy@hotmail.com
 	 */
-	@RequestMapping("/")
+	@RequestMapping("/loginPage")
 	public String index(HttpServletRequest request, Model model) {
-		model.addAttribute(AuthConst.CLIENT_URL, request.getParameter(AuthConst.CLIENT_URL));
+		//request.getParameter(AuthConst.CLIENT_URL);
+		//request.setAttribute(AuthConst.CLIENT_URL,"http://sso.ucaner.cn");
+		model.addAttribute(AuthConst.CLIENT_URL,"http://sso.ucaner.cn");
 		return "index";
 	}
 

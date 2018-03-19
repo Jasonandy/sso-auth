@@ -65,7 +65,9 @@ public class LoginController {
 		 */
         // 验证用户
 		//User user = userService.find(input);
-		User user = new User("001","jason","123456");
+		User user = new User();
+		user.setId("00001");
+		user.setUsername("Jason");
 		if (!user.getUsername().equals(input.getUsername())) {
 			view = new ModelAndView(loginErro);
 			view.addObject("erroInfo", "大兄弟，对捂住！请核实好账号密码再来登哦！");
@@ -79,15 +81,16 @@ public class LoginController {
 		
 		// 存储，用于注销
 		SessionStorage.INSTANCE.set(token, request.getSession());
-
+		//StandardSession[7F002A25BF01A9DE41802C5A56FA31A3]
 		// 子系统跳转过来的登录请求，授权、存储后，跳转回去
 		String clientUrl = request.getParameter(AuthConst.CLIENT_URL);
 		if (clientUrl != null && !"".equals(clientUrl)) {
 			view = new ModelAndView("redirect:" + clientUrl + "?" + AuthConst.TOKEN + "=" + token);
 			// 存储，用于注销
 			ClientStorage.INSTANCE.set(token, clientUrl);
+			return view;
 		}
-		return view;
+		return new ModelAndView("success");
 	}
 	
 	/**

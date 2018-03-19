@@ -6,8 +6,11 @@
 </head>
 
 <body>
-<div algin="center">
-    <div algin="center">
+<div>
+	<div id="head" aglin="center">
+		<h1 color="red">统一授权中心</h1>
+	</div>
+    <div id="content" algin="center">
 		<form id="login" action="${path}/login" method="post">
 			username:<input type="text" name="username" value="Jason" /> </br>
 			password:<input type="password" name="password" value="123456" />
