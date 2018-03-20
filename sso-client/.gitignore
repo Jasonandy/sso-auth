@@ -1,7 +1,9 @@
-# ignore file By Jason
+##ignore file By Jason ##
 /.settings/
 /target/
 /.classpath
 /.project
 /sso-client.iml
+/.myeclipse/
 #########End#############
+
